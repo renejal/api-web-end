@@ -7,6 +7,9 @@
         <title>form student</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="js/alertify.min.css" rel="stylesheet" type="text/css"/>
+        <link href="js/default.min.css" rel="stylesheet" type="text/css"/>
+        <script src="js/alertify.min.js" type="text/javascript"></script>
     </head>
     <body>
         <header>
@@ -24,10 +27,10 @@
         <div class="card">
         <div class="card-body">
         <c:if test="${student != null}">
-        <form action="update" method="post">
+        <form name="estudiante" action="update" method="post" id="formulario" class="formulario" onsubmit="return validar_nombre()">
             </c:if>
            <c:if test="${student == null}">
-            <form action="insert" method="post">
+            <form action="inse  rt" method="post">
             </c:if>
            <caption>
             <h2>
@@ -74,6 +77,26 @@
         </form>
         </div>
         </div>
+                   
         </div>
+                   <script>
+                       function validar_nombre(){
+                           nom = document.estudiante.name;
+                           if(nom.length == 0){
+                               alertify.alert("Error", "Ingrese nombre del Estudiante").set('label', 'Ok');
+                               return false;
+                               
+                           }
+                           alertify.success("Categoria registadad");
+                           return true;
+                       }
+                       funtion validarTexto(){
+                           tecla = e.keyCode;
+                           teclado = String.fromCharCode(tecla)
+                           if((teclado < 'A' || teclado > 'Z') && teclado != " "){
+                               return false;
+                           }
+                       }
+                   </script>
     </body>
 </html>

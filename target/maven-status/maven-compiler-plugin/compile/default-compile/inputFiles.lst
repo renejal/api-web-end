@@ -2,10 +2,13 @@ C:\Users\bjalvin\Documents\NetBeansProjects\api-web-end\src\main\java\com\mycomp
 C:\Users\bjalvin\Documents\NetBeansProjects\api-web-end\src\main\java\com\mycompany\api\web\end\exceptions\NonexistentEntityException.java
 C:\Users\bjalvin\Documents\NetBeansProjects\api-web-end\src\main\java\com\mycompany\api\web\end\TbEstudiante.java
 C:\Users\bjalvin\Documents\NetBeansProjects\api-web-end\src\main\java\com\mycompany\api\web\end\TbUniversidadJpaController.java
+C:\Users\bjalvin\Documents\NetBeansProjects\api-web-end\src\main\java\com\mycompany\api\web\end\UsuarioJpaController.java
 C:\Users\bjalvin\Documents\NetBeansProjects\api-web-end\src\main\java\com\mycompany\api\web\end\exceptions\IllegalOrphanException.java
 C:\Users\bjalvin\Documents\NetBeansProjects\api-web-end\src\main\java\com\mycompany\api\web\end\TbEstudianteCurso.java
-C:\Users\bjalvin\Documents\NetBeansProjects\api-web-end\src\main\java\com\mycompany\api\web\end\control\AppUniversity.java
+C:\Users\bjalvin\Documents\NetBeansProjects\api-web-end\src\main\java\com\mycompany\api\web\end\Usuario.java
 C:\Users\bjalvin\Documents\NetBeansProjects\api-web-end\src\main\java\com\mycompany\api\web\end\TbCursoJpaController.java
+C:\Users\bjalvin\Documents\NetBeansProjects\api-web-end\src\main\java\com\mycompany\api\web\end\control\UsuarioServlet.java
+C:\Users\bjalvin\Documents\NetBeansProjects\api-web-end\src\main\java\com\mycompany\api\web\end\control\EstudianteServelet.java
 C:\Users\bjalvin\Documents\NetBeansProjects\api-web-end\src\main\java\com\mycompany\api\web\end\persistence\jpa\exceptions\PreexistingEntityException.java
 C:\Users\bjalvin\Documents\NetBeansProjects\api-web-end\src\main\java\com\mycompany\api\web\end\TbUniversidad.java
 C:\Users\bjalvin\Documents\NetBeansProjects\api-web-end\src\main\java\com\mycompany\api\web\end\TbCurso.java

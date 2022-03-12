@@ -6,6 +6,7 @@
     <class>com.mycompany.api.web.end.TbUniversidad</class>
     <class>com.mycompany.api.web.end.TbCurso</class>
     <class>com.mycompany.api.web.end.TbEstudianteCurso</class>
+    <class>com.mycompany.api.web.end.Usuario</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/universidad?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
