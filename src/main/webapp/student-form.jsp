@@ -30,7 +30,7 @@
         <form name="estudiante" action="update" method="post" id="formulario" class="formulario" onsubmit="return validar_nombre()">
             </c:if>
            <c:if test="${student == null}">
-            <form action="inse  rt" method="post">
+            <form action="insert" method="post">
             </c:if>
            <caption>
             <h2>
