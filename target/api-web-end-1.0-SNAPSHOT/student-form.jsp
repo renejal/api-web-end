@@ -7,9 +7,6 @@
         <title>form student</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link href="js/alertify.min.css" rel="stylesheet" type="text/css"/>
-        <link href="js/default.min.css" rel="stylesheet" type="text/css"/>
-        <script src="js/alertify.min.js" type="text/javascript"></script>
     </head>
     <body>
         <header>
@@ -27,10 +24,10 @@
         <div class="card">
         <div class="card-body">
         <c:if test="${student != null}">
-        <form name="estudiante" action="update" method="post" id="formulario" class="formulario" onsubmit="return validar_nombre()">
+        <form name="estudiante" action="update" method="post" id="formulario" class="formulario"">
             </c:if>
            <c:if test="${student == null}">
-            <form action="insert" method="post">
+            <form name="estudiante" action="insert" method="post">
             </c:if>
            <caption>
             <h2>
@@ -46,19 +43,19 @@
             <input type="hidden" name="id" value="<c:out value='${student.id}' />" />
             </c:if>
              <fieldset class="form-group">
-                <label>code</label> <input type="text" value="<c:out value='${student.code}' />"
-               class="form-control" name="code" required="required">
+                <label>code</label> <input type="text" name="code" value="<c:out value='${student.code}' />"
+               class="form-control" required="required">
             </fieldset>
             <fieldset class="form-group">
-                <label>Programa</label> <input type="text" value="<c:out value='${student.program}' />"
-               class="form-control" name="program" required="required">
+                <label>Programa</label> <input type="text" name="programa" value="<c:out value='${student.program}' />"
+               class="form-control" required="required">
             </fieldset>
             <fieldset class="form-group">
-                <label>nombre</label> <input type="text" value="<c:out value='${student.name}' />"
-               class="form-control" name="name">
+                <label>nombre</label> <input type="text" name="name" value="<c:out value='${student.name}' />"
+               class="form-control">
             </fieldset>
             <fieldset class="form-group">
-                <label>apellido</label> <input type="text" value="<c:out value='${student.lastName}'/>" class="form-control" name="lastName">
+                <label>apellido</label> <input type="text" name="apellido" value="<c:out value='${student.lastName}'/>" class="form-control">
             </fieldset>
             <div class ="row">
                 <div class="col-md-8">
@@ -71,7 +68,7 @@
                    <option>rene</option>
                  </select>
                 </div>
-                 <button type="submit" class="btn btn-success">Guardar</button>
+                 <td colspan="2" align="center"><input type="button" value="Enviar" onclick="valida_envia()"></td>
             </div>
            
         </form>
@@ -79,24 +76,43 @@
         </div>
                    
         </div>
-                   <script>
-                       function validar_nombre(){
-                           nom = document.estudiante.name;
-                           if(nom.length == 0){
-                               alertify.alert("Error", "Ingrese nombre del Estudiante").set('label', 'Ok');
-                               return false;
-                               
-                           }
-                           alertify.success("Categoria registadad");
-                           return true;
-                       }
-                       funtion validarTexto(){
-                           tecla = e.keyCode;
-                           teclado = String.fromCharCode(tecla)
-                           if((teclado < 'A' || teclado > 'Z') && teclado != " "){
-                               return false;
-                           }
-                       }
-                   </script>
+                     <script type="text/javascript">
+                    function valida_envia(){
+                      //valido el nombre
+                      dato = document.estudiante.code.value;
+                      if (!dato.match(/[0123456789]{1,8}/)){
+                       
+                           alert("Tiene que ingresar el codigo valido")
+                           document.estudiante.code.focus()
+                           return 0;
+                      }
+                       programa = document.estudiante.programa.value;
+                      if (!programa.match(/^(?!.* (?: |$))[A-Z,a-z]+$/)){
+                       
+                           alert("Tiene que ingresar el programa valido")
+                           document.estudiante.programa.focus()
+                           return 0;
+                      }
+                      name = document.estudiante.name.value;
+                      if (!name.match(/^(?!.* (?: |$))[A-Z,a-z]+$/)){
+                       
+                           alert("Tiene que ingresar el nombre valido")
+                           document.estudiante.name.focus()
+                           return 0;
+                      }
+                       last = document.estudiante.apellido.value;
+                      if (!last.match(/^(?!.* (?: |$))[A-Z,a-z]+$/)){
+                       
+                           alert("Tiene que ingresar el apellido valido")
+                           document.estudiante.apellido.focus()
+                           return 0;
+                      }
+                      alert("Muchas gracias por enviar el formulario");
+                      document.estudiante.submit();
+                      
+                     }
+                    
+                 
+  </script>
     </body>
 </html>

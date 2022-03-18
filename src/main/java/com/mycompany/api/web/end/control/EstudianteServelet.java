@@ -134,10 +134,10 @@ public class EstudianteServelet extends HttpServlet {
      throws SQLException, IOException, IllegalOrphanException {
 
      //toma los datos del formulario de clientes
-     String program = request.getParameter("program");
+     String program = request.getParameter("programa");
      String code = request.getParameter("code");
      String name = request.getParameter("name");     
-     String last_name = request.getParameter("lastName");
+     String last_name = request.getParameter("apellido");
 
      
     //crea un objeto de tipo student vacío y lo llena con los datosobtenidos
@@ -159,8 +159,8 @@ public class EstudianteServelet extends HttpServlet {
     int id_student = Integer.parseInt(request.getParameter("id"));
     String code = request.getParameter("code");
     String name = request.getParameter("name");
-    String last_name = request.getParameter("lastName");
-    String program = request.getParameter("program");     
+    String last_name = request.getParameter("apellido");
+    String program = request.getParameter("programa");     
     //crea un objeto vacío y lo llena con los datos del cliente
     TbEstudiante Student = new TbEstudiante();
     Student.setId(id_student);
